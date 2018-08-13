@@ -1,0 +1,37 @@
+extends layout
+
+block content
+        h1 Profile
+        .container
+            .row 
+                .col-xs-12.col-sm-12.col-md-6.col-lg-6.col-xs-offset-0.col-sm-offset-0.col-md-offset-3.col-lg-offset-3.toppad
+                    .panel.panel-info
+                        .panel-heading
+                            h3.panel-title 
+                                span.text-right Ashish Jain
+                .col-md-9.col-lg-9
+                    form(method='POST', action='/users')
+                        #form-group
+                            label Email:
+                            input.form-control(name='email', type='text', placeholder='abc@example.com')
+                        br
+                        #form-group
+                            label Department:
+                            input.form-control(name='department', type='text', placeholder='Designated Department')
+                        br
+                        #form-group
+                            label Hire-Date:
+                            input.form-control(name='hiredate', type='date')
+                        br
+                        #form-group
+                            label Gender:
+                                Select(type="gender", name="gender")
+                                    option Male
+                                    option Female
+                        br  
+                        #form-group
+                            label Address:
+                            input.form-control(name='address', type='text')
+                        br
+                        input.btn.btn-primary(type='submit', value='Submit')
+                        input.btn.btn-Secondary(type='reset' value='Reset')

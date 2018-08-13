@@ -1,0 +1,43 @@
+doctype html
+html
+    head
+        title FromScratch
+        link(rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet' href='/css/style.css')
+    body
+      nav#navbar-example2.navbar.navbar-light.bg-secondary
+        a.navbar-brand(href='#') From Scratch
+          ul.nav
+            li.nav
+              a.nav(href='/') Home
+          if user
+            li.nav
+              a.nav(href='/articles/add') Add Article
+          ul.nav 
+            if user
+              li.nav
+                a.nav(href='/users/logout') Logout
+            else
+              li.nav
+                a.nav(href='/users/register') Register
+              li.nav
+                a.nav(href='/users/login') Login
+
+            
+              
+      .container
+        != messages('message', locals)
+        if errors
+          each error, i in errors 
+            div(class="alert alert-danger") #{error.msg}
+        block content
+        br
+        hr
+        footer
+          p Copyright &copy2018
+      
+           
+      script(src="/bower_components/jquery/dist/jquery.js")
+      script(src="/bower_components/bootstrap/dist/js/bootstrap.js")
+      script(src="/js/main.js")
+      
